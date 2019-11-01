@@ -10,6 +10,9 @@ gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+gem 'bootstrap'
+gem 'kaminari'
+gem 'clearance'
 
 
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -23,6 +26,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
@@ -30,6 +35,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'pry'
+  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
