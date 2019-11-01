@@ -6,7 +6,14 @@
     </h2>
     <ul class="list-group">
       <% @todo_list.tasks&.each do |task| %>
-        <li class="list-group-item"><%= task.description %></li>
+        <li class="list-group-item">
+          <%= task.description %>
+          <div>
+            <small>
+              Expires at: <%= task.expires_at %>
+            </small>
+          </div>
+        </li>
       <% end %>
     </ul>
   </div>

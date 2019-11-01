@@ -22,6 +22,7 @@ class TasksController < ApplicationController
       require(:task).
       permit(
         :description,
+        :expires_at,
       ).merge(
       todo_list_id: params[:todo_list_id],
     )
