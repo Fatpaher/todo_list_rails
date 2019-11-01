@@ -1,4 +1,5 @@
 <% if @todo_list.present? %>
+  <%= link_to 'Create new task', new_todo_list_task_path(todo_list_id: @todo_list.id) %>
   <div>
     <%= @todo_list.title %>
     <ul>

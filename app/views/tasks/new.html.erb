@@ -1,0 +1,16 @@
+<h1>New task</h1>
+
+<%= form_for(:task, url: todo_list_tasks_path(todo_list_id: params[:todo_list_id])) do |f| %>
+  <div class="title ">
+    <%= f.label :description %>
+    <%= f.text_field(:description) %>
+  </div>
+  <div class="title ">
+    <%= f.label :expires_at %>
+    <%= f.text_field(:expires_at) %>
+  </div>
+  <div class="submit">
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>
+
