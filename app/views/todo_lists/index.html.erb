@@ -1,7 +1,14 @@
+<h1>Your todo lists</h1>
 <%=link_to 'New Todo', new_todo_list_path %>
 
 <% @todo_lists.each do |todo_list| %>
   <div>
     <%= todo_list.title %>
+
+    <ul>
+      <% todo_list.tasks&.each do |task| %>
+        <li><%= task.description %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
