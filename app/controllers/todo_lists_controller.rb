@@ -1,6 +1,10 @@
 class TodoListsController < ApplicationController
   def index
-    @todo_lists = current_user.todo_lists.includes(:tasks)
+    if current_user.present?
+      @todo_lists = current_user.todo_lists.includes(:tasks)
+    else
+      TodoList.none
+    end
   end
 
   def show

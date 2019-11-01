@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :todo_lists, only: [:index, :show, :new, :create], shallow: true do
     resources :tasks, only: [:new, :create]
   end
+
 end
