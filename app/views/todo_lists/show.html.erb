@@ -1,0 +1,10 @@
+<% if @todo_list.present? %>
+  <div>
+    <%= @todo_list.title %>
+    <ul>
+      <% @todo_list.tasks&.each do |task| %>
+        <li><%= task.description %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

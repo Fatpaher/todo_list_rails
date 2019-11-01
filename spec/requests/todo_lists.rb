@@ -19,6 +19,27 @@ RSpec.describe '/todo_lists' do
     end
   end
 
+  describe 'GET /todo_list/:id' do
+    it 'returns todo_list info' do
+      user = create(:user)
+      user_todo_list = create(:todo_list, user: user)
+      tasks = create_list(:task, 2, todo_list: todo_list)
+      other_todo_list = create(:todo_list)
+      sign_in_as(user)
+
+      get('/todo_lists')
+
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include(user_todo_list.title)
+
+      tasks.each do |task|
+        expect(response.body).to include(task.description)
+      end
+
+      expect(response.body).not_to include(other_todo_list.title)
+    end
+  end
+
   describe 'get /todo_lists/new' do
     it 'returns form for new todo_list' do
       sign_in_as(create(:user))

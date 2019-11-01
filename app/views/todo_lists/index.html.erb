@@ -2,13 +2,14 @@
 <%=link_to 'New Todo', new_todo_list_path %>
 
 <% @todo_lists.each do |todo_list| %>
-  <div>
-    <%= todo_list.title %>
-
-    <ul>
-      <% todo_list.tasks&.each do |task| %>
-        <li><%= task.description %></li>
-      <% end %>
-    </ul>
-  </div>
+  <% if todo_list.title.present? %>
+    <div>
+      <%= link_to todo_list.title, todo_list_path(todo_list) %>
+      <ul>
+        <% todo_list.tasks&.each do |task| %>
+          <li><%= task.description %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
