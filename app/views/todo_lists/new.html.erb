@@ -1,12 +1,13 @@
 <h1>New todo list</h1>
 
-<%= form_for(@todo_list) do |f| %>
     <div class="title ">
-      <%= f.label :title %>
-      <%= f.text_field(:title) %>
     </div>
   <div class="submit">
-    <%= f.submit 'Save' %>
   </div>
+<%= form_for(@todo_list) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field(:title, class: 'form-control') %>
+  </div>
+  <%= f.submit 'Save' %>
 <% end %>
-

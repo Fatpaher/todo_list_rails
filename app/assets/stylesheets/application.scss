@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar {
+  padding-top: 20px;
+  padding-left: 50px;
+
+  .signed {
+    padding-left: 100px;
+    margin: auto;
+    position: absolute;
+    right: 50px;
+  }
+}
